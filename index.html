@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Elm Http.Progress Example</title>
+	<style type="text/css">
+		body {
+			line-height:1.6;
+			font-size:18px;
+			color:#444;
+			padding:0 10px;
+		}
+		h1 {
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+		h1,h2,h3 {
+			line-height:1.2;
+			text-align: center;
+		}
+		.content {
+			display: flex;
+			flex-direction: column;
+			margin: 0 auto;
+			max-width: 550px
+		}
+		.select-content {
+			display: flex;
+			flex-direction: row;
+		}
+		.flex-grow-1 { flex-grow: 1; }
+		.book-content {
+			height: 400px;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="main"><h1 class="loading">Loading...</h1></div>
+	<!-- <script src="/_compile/src/Main.elm"></script> -->
+	<script src="main.js"></script>
+	<script>
+		var node = document.getElementById('main');
+		while (node.firstChild) {
+				node.removeChild(node.firstChild);
+		}
+		var app = Elm.Main.embed(node);
+	</script>
+</body>
+</html>
