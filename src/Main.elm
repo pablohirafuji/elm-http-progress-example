@@ -105,9 +105,19 @@ view model =
     div [ class "content" ]
         [ h1 [] [ text "Elm Http.Progress example" ]
         , p []
-            [ text "To better see the progress, "
+            [ b [] [ text "NOTE: " ]
+            , text "Currently (7/2018) this example only works on Firefox, as it is the only browser to track the progress when the content is gzipped. There is a "
             , a
-                [ href "https://developers.google.com/web/tools/chrome-devtools/network-performance/#emulate" ]
+                [ href "https://bugs.chromium.org/p/chromium/issues/detail?id=463622"
+                , target "_blank"
+                ]
+                [ text "thread on chromium" ]
+            , text " about this and the reason behind."
+            , text "To better see the progress in Firefox, "
+            , a
+                [ href "https://blog.nightly.mozilla.org/2016/11/07/simulate-slow-connections-with-the-network-throttling-tool/"
+                , target "_blank"
+                ]
                 [ text "throttle your internet connection" ]
             , text "."
             ]
@@ -182,7 +192,7 @@ footerView : Html Msg
 footerView =
     p []
         [ a
-            [ href "https://github.com/pablohirafuji/elm-http-progress-example"
+            [ href "https://github.com/pablohirafuji/elm-http-progress-example/blob/master/src/Main.elm"
             , target "_blank"
             ]
             [ text "Source" ]
